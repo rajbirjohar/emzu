@@ -1,6 +1,6 @@
 .hero {
   width: 100%;
-  height: calc(65svh - 100px);
+  min-height: calc(65svh - 100px);
   display: flex;
   align-items: center;
   gap: var(--gutter-lg);
