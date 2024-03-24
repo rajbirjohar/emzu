@@ -1,0 +1,22 @@
+.header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--gutter-md);
+  padding-bottom: var(--gutter-xl);
+}
+
+.heroimage {
+  padding-bottom: var(--gutter-md);
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--gutter-md);
+}
+
+@media screen and (max-width: 768px) {
+  .header {
+    grid-template-columns: 1fr;
+  }
+}

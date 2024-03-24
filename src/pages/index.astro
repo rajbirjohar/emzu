@@ -1,0 +1,31 @@
+---
+import Global from "../layouts/Global/index.astro";
+import Pieces from "../components/Pieces/index.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import styles from "./_styles.module.css";
+import profile from "/public/profile.png";
+---
+
+<Global title={SITE_TITLE} description={SITE_DESCRIPTION}>
+  <section class={styles.hero}>
+    <div class={styles.profile}>
+      <img src={profile.src} alt="Profile" class={styles.photo} />
+    </div>
+    <div class={styles.content}>
+      <h1 class={styles.title}>Hi! I'm Emily.</h1>
+      <p class={styles.text}>
+        I'm a graphic designer and illustrator based in LA county with an
+        emphasis in layout design and packaging. To me, graphic design is
+        problem solving, and constantly a work in progress.
+      </p>
+      <p class={styles.text}>
+        When I'm not designing, you might find me at the local bowling alley
+        aiming for a new personal best, or at home recharging by napping,
+        watching movies or playing videos games.
+      </p>
+    </div>
+  </section>
+  <section>
+    <Pieces />
+  </section>
+</Global>

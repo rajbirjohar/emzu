@@ -1,0 +1,35 @@
+---
+import type { CollectionEntry } from "astro:content";
+import Global from "../../layouts/Global/index.astro";
+import styles from "./styles.module.css";
+
+type Props = CollectionEntry<"pieces">["data"];
+
+const { title, subtitle, description, pubDate, heroImage, images } =
+  Astro.props;
+---
+
+<Global title={title} description={description}>
+  <article>
+    <header class={styles.header}>
+      <div class={styles.intro}>
+        <h1 class={styles.title}>{title}</h1>
+        <p class={styles.subtitle}>{subtitle}</p>
+      </div>
+      <div class={styles.content}>
+        {description}
+      </div>
+    </header>
+    <div class={styles.heroimage}>
+      {heroImage && <img class={styles.banner} src={heroImage} alt="" />}
+    </div>
+    <div class={styles.gallery}>
+      {
+        images.map((image) => (
+          <img src={image.src.src} alt={image.alt} class={styles.image} />
+        ))
+      }
+    </div>
+    <slot />
+  </article>
+</Global>

@@ -1,0 +1,27 @@
+.footer {
+  width: 100%;
+  max-width: var(--main-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--gutter-md);
+  padding: 0 var(--gutter-md) var(--gutter-xxl) var(--gutter-md);
+  font-size: 14px;
+}
+
+.links {
+}
+
+.blurb {
+  line-height: 1.75;
+}
+
+.blurb > * + * {
+  margin-block-start: 1rem;
+}
+
+@media screen and (max-width: 668px) {
+  .footer {
+    grid-template-columns: 1fr;
+  }
+}

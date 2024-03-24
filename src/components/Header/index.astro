@@ -1,0 +1,19 @@
+---
+import styles from "./styles.module.css";
+import logo from "/public/logo.svg";
+---
+
+<header class={styles.header}>
+  <nav class={styles.nav}>
+    <div class={styles.links}>
+      <a href="/" class={styles.link}>Home</a>
+      <a href="/pieces">Pieces</a>
+    </div>
+    <img src={logo.src} alt="logo" class={styles.logo} />
+    <div class={styles.cta}>
+      <a href="https://www.instagram.com/mle_pai/" target="_blank">
+        Instagram
+      </a>
+    </div>
+  </nav>
+</header>

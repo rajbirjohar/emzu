@@ -1,0 +1,25 @@
+---
+import styles from "./styles.module.css";
+import { getCollection } from "astro:content";
+// import FormattedDate from '../../components/FormattedDate.astro';
+
+const posts = (await getCollection("pieces")).sort(
+  (a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
+);
+
+// const posts = await getCollection("pieces");
+---
+
+<div class={styles.pieces}>
+  {
+    posts.map((post) => (
+      <a href={`/pieces/${post.slug}/`} class={styles.piece}>
+        <img class={styles.image} src={post.data.heroImage} alt={post.slug} />
+        <div class={styles.content}>
+          <h3 class={styles.title}>{post.data.title}</h3>
+          <p class={styles.description}>{post.data.subtitle}</p>
+        </div>
+      </a>
+    ))
+  }
+</div>

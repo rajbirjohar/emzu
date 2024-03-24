@@ -1,0 +1,19 @@
+---
+import Global from "../../layouts/Global/index.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
+import { getCollection } from "astro:content";
+import Pieces from "../../components/Pieces/index.astro";
+// import FormattedDate from '../../components/FormattedDate.astro';
+
+// const posts = (await getCollection('blog')).sort(
+// 	(a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
+// );
+
+const posts = await getCollection("pieces");
+---
+
+<Global title={SITE_TITLE} description={SITE_DESCRIPTION}>
+  <section>
+    <Pieces />
+  </section>
+</Global>

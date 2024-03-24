@@ -1,0 +1,25 @@
+.hero {
+  width: 100%;
+  height: calc(65svh - 100px);
+  display: flex;
+  align-items: center;
+  gap: var(--gutter-lg);
+}
+
+.profile {
+  width: 100%;
+  max-width: 400px;
+}
+
+.content > * + * {
+  margin-block-start: 1rem;
+}
+
+@media screen and (max-width: 668px) {
+  .hero {
+    flex-direction: column;
+  }
+  .profile {
+    max-width: 80%;
+  }
+}
