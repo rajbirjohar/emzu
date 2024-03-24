@@ -1,14 +1,16 @@
 .hero {
   width: 100%;
   min-height: calc(65svh - 100px);
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--gutter-md);
   align-items: center;
-  gap: var(--gutter-lg);
 }
 
 .profile {
   width: 100%;
   max-width: 400px;
+  margin: 0 auto;
 }
 
 .content > * + * {
@@ -17,7 +19,7 @@
 
 @media screen and (max-width: 668px) {
   .hero {
-    flex-direction: column;
+    grid-template-columns: 1fr;
   }
   .profile {
     max-width: 80%;

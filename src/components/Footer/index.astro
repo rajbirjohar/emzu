@@ -1,27 +1,36 @@
 ---
 import styles from "./styles.module.css";
+import logo from "/public/logo.svg";
 ---
 
 <footer class={styles.footer}>
-  <div class={styles.links}>
-    <h4>Contact</h4>
-  </div>
-  <div class={styles.blurb}>
-    <h4>Blurb</h4>
-    <p>
-      Emily is a graphic designer and illustrator based in LA county with an
-      emphasis in layout design and packaging.
-    </p>
-    <p>
-      To her, graphic design is problem solving, and constantly a work in
-      progress. She views her work as a constant motivator to strive for
-      improvement and discovering new ways of approaching design. No work is
-      ever truly complete.
-    </p>
-    <p>
-      When she's not designing, you might find her at the local bowling alley
-      aiming for a new personal best, or at home recharging by napping, watching
-      movies or playing videos games.
-    </p>
+  <img src={logo.src} alt="logo" class={styles.logo} />
+  <div class={styles.content}>
+    <div class={styles.links}>
+      <h4>Contact</h4>
+      <a href="https://www.instagram.com/mle_pai/" target="_blank">Instagram</a>
+      <a href="https://www.linkedin.com/in/emily-pai" target="_blank"
+        >LinkedIn</a
+      >
+      <p>pai.emily001 [at] gmail [dot] com</p>
+    </div>
+    <div class={styles.blurb}>
+      <h4>Blurb</h4>
+      <p>
+        Emily is a graphic designer and illustrator based in LA county with an
+        emphasis in layout design and packaging.
+      </p>
+      <p>
+        To her, graphic design is problem solving, and constantly a work in
+        progress. She views her work as a constant motivator to strive for
+        improvement and discovering new ways of approaching design. No work is
+        ever truly complete.
+      </p>
+      <p>
+        When she's not designing, you might find her at the local bowling alley
+        aiming for a new personal best, or at home recharging by napping,
+        watching movies or playing videos games.
+      </p>
+    </div>
   </div>
 </footer>
