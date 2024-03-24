@@ -2,7 +2,6 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
   gap: var(--gutter-md);
-  width: 100%;
 }
 
 .piece {
@@ -21,7 +20,5 @@
 
 .image {
   aspect-ratio: 1;
-  width: 100%;
-  height: auto;
   object-fit: cover;
 }
