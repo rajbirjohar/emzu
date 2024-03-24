@@ -10,7 +10,8 @@ const pieces = defineCollection({
       // Transform string to Date object
       pubDate: z.coerce.date(),
       updatedDate: z.coerce.date().optional(),
-      heroImage: z.string().optional(),
+      thumbnail: z.string(),
+      hero: image().optional(),
       images: z.array(
         z.object({
           src: image(),

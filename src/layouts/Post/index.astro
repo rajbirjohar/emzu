@@ -5,8 +5,7 @@ import styles from "./styles.module.css";
 
 type Props = CollectionEntry<"pieces">["data"];
 
-const { title, subtitle, description, pubDate, heroImage, images } =
-  Astro.props;
+const { title, subtitle, description, pubDate, hero, images } = Astro.props;
 ---
 
 <Global title={title} description={description}>
@@ -21,7 +20,7 @@ const { title, subtitle, description, pubDate, heroImage, images } =
       </div>
     </header>
     <div class={styles.heroimage}>
-      {heroImage && <img class={styles.banner} src={heroImage} alt="" />}
+      {hero && <img class={styles.banner} src={hero.src} alt="Hero Image" />}
     </div>
     <div class={styles.gallery}>
       {
