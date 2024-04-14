@@ -12,10 +12,16 @@ const pieces = defineCollection({
       updatedDate: z.coerce.date().optional(),
       thumbnail: z.string(),
       hero: image().optional(),
-      images: z.array(
+      collections: z.array(
         z.object({
-          src: image(),
-          alt: z.string(),
+          // Number of items in a row
+          number: z.string(),
+          images: z.array(
+            z.object({
+              src: image(),
+              alt: z.string(),
+            })
+          ),
         })
       ),
     }),
