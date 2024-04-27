@@ -7,6 +7,12 @@ const pieces = defineCollection({
       title: z.string(),
       subtitle: z.string(),
       description: z.string(),
+      links: z.array(
+        z.object({
+          title: z.string(),
+          url: z.string(),
+        })
+      ).optional(),
       // Transform string to Date object
       pubDate: z.coerce.date(),
       updatedDate: z.coerce.date().optional(),

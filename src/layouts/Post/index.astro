@@ -5,7 +5,7 @@ import styles from "./styles.module.css";
 
 type Props = CollectionEntry<"pieces">["data"];
 
-const { title, subtitle, description, pubDate, hero, collections } =
+const { title, subtitle, description, links, pubDate, hero, collections } =
   Astro.props;
 ---
 
@@ -18,6 +18,17 @@ const { title, subtitle, description, pubDate, hero, collections } =
       </div>
       <div class={styles.content}>
         {description}
+        {
+          links && (
+            <p class={styles.links}>
+              {links.map((link) => (
+                <a href={link.url} class={styles.link}>
+                  {link.title}
+                </a>
+              ))}
+            </p>
+          )
+        }
       </div>
     </header>
     <div class={styles.heroimage}>
