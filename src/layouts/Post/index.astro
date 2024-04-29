@@ -5,10 +5,11 @@ import styles from "./styles.module.css";
 
 type Props = CollectionEntry<"pieces">["data"];
 
-const { title, subtitle, description, pubDate, hero, images } = Astro.props;
+const { title, subtitle, description, links, pubDate, hero, collections } =
+  Astro.props;
 ---
 
-<Global title={title} description={description}>
+<Global title={`Emily Pai | ${title}`} description={description}>
   <article>
     <header class={styles.header}>
       <div class={styles.intro}>
@@ -17,6 +18,17 @@ const { title, subtitle, description, pubDate, hero, images } = Astro.props;
       </div>
       <div class={styles.content}>
         {description}
+        {
+          links && (
+            <p class={styles.links}>
+              {links.map((link) => (
+                <a href={link.url} class={styles.link}>
+                  {link.title}
+                </a>
+              ))}
+            </p>
+          )
+        }
       </div>
     </header>
     <div class={styles.heroimage}>
@@ -24,8 +36,15 @@ const { title, subtitle, description, pubDate, hero, images } = Astro.props;
     </div>
     <div class={styles.gallery}>
       {
-        images.map((image) => (
-          <img src={image.src.src} alt={image.alt} class={styles.image} />
+        collections.map((collection) => (
+          <div class={`${styles.collection} ${styles[collection.number]}`}>
+            {collection.images.map((image) => (
+              <div class={styles.imagecontainer}>
+                <img class={styles.image} src={image.src.src} alt={image.alt} />
+                {image.caption && <p class={styles.caption}>{image.caption}</p>}
+              </div>
+            ))}
+          </div>
         ))
       }
     </div>
