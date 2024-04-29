@@ -26,6 +26,7 @@ const pieces = defineCollection({
             z.object({
               src: image(),
               alt: z.string(),
+              caption: z.string().optional(),
             })
           ),
         })

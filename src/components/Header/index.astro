@@ -1,6 +1,7 @@
 ---
 import styles from "./styles.module.css";
 import logo from "/public/logo.svg";
+import textlogo from "/public/emzustudio.png";
 ---
 
 <header class={styles.header}>
@@ -9,7 +10,10 @@ import logo from "/public/logo.svg";
       <a href="/" class={styles.link}>Home</a>
       <a href="/pieces">Pieces</a>
     </div>
-    <img src={logo.src} alt="logo" class={styles.logo} />
+    <a class={styles.logo} href="/">
+      <img src={logo.src} alt="logo" class={styles.duck} />
+      <img src={textlogo.src} alt="logo" class={styles.textlogo} />
+    </a>
     <div class={styles.cta}>
       <a href="https://www.instagram.com/mle_pai/" target="_blank">
         Instagram

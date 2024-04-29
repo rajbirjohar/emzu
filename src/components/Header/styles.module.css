@@ -23,11 +23,37 @@
 }
 
 .logo {
+  display: flex;
+  align-items: center;
+  gap: var(--gutter-sm);
+}
+
+.duck {
   height: 50px;
   width: auto;
   justify-self: center;
 }
 
+.textlogo {
+  height: 30px;
+}
+
 .cta {
   justify-self: flex-end;
+}
+
+@media screen and (max-width: 868px) {
+  .nav {
+    grid-template-columns: 1fr;
+    justify-content: center;
+  }
+  .logo {
+    margin: 0 auto;
+  }
+  .links {
+    display: none;
+  }
+  .cta {
+    display: none;
+  }
 }

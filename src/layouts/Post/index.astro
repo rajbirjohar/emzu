@@ -41,7 +41,7 @@ const { title, subtitle, description, links, pubDate, hero, collections } =
             {collection.images.map((image) => (
               <div class={styles.imagecontainer}>
                 <img class={styles.image} src={image.src.src} alt={image.alt} />
-                <p class={styles.caption}>{image.alt}</p>
+                {image.caption && <p class={styles.caption}>{image.caption}</p>}
               </div>
             ))}
           </div>
